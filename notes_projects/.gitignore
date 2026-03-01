@@ -1,0 +1,21 @@
+# Node dependencies
+node_modules/
+notes-client/node_modules/
+
+# Frontend build
+notes-client/build/
+notes-client/dist/
+
+# Env
+.env
+.env.local
+
+# Logs
+npm-debug.log*
+yarn-error.log*
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 650px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.note-form {
+  margin-bottom: 25px;
+}
+
+.note-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.note-form button {
+  width: 100%;
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.note-form button:hover {
+  background: #5a67d8;
+}
+
+.note-list {
+  list-style: none;
+  padding: 0;
+}
+
+.note-item {
+  background: #f9f9ff;
+  border-left: 6px solid #667eea;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.note-item h3 {
+  margin: 0;
+  color: #333;
+}
+
+.note-item p {
+  margin: 5px 0 10px;
+  color: #555;
+}
+
+.note-item button {
+  background: #e53e3e;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.note-item button:hover {
+  background: #c53030;
+}
