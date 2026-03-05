@@ -4,13 +4,16 @@ import com.example.practice.dto.ProfileCreateRequest;
 import com.example.practice.dto.ProfileResponse;
 import com.example.practice.dto.ProfileUpdateRequest;
 import com.example.practice.entity.Profile;
+import com.example.practice.exception.ResourceNotFoundException;
 import com.example.practice.repository.ProfileRepository;
 import com.example.practice.service.ProfileService;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
+@Transactional
 public class ProfileServiceImpl implements ProfileService {
 
     private final ProfileRepository repository;
@@ -43,6 +46,7 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
+    @Transactional
     public ProfileResponse updateProfile(Long id, ProfileUpdateRequest request) {
         Profile profile = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Profile Not Found"));
@@ -51,10 +55,11 @@ public class ProfileServiceImpl implements ProfileService {
             profile.setName(request.getName());
         }
 
-        if (request.getAge() !=null){
+        if (request.getAge() != null){
             profile.setAge(request.getAge());
         }
-        return mapToResponse(profile);
+        Profile updatedProfile = repository.save(profile);
+        return mapToResponse(updatedProfile);
     }
 
     @Override
